@@ -14,4 +14,7 @@ Ths avoids timeouts as Azure.Identity alwasy tries Managed Identity First.
 TokenRequets on each connection request can be a second or so of wasted time.
 
 
-
+<pre><code class='language-cs'>
+Console.WriteLine("Fenced code blocks ftw!");
+</code></pre>
+  
