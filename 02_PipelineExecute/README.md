@@ -1,6 +1,6 @@
 ## 02_PipelineExecute
 Example of using Azure.Identity with HttpClient to execute a Fabric Pipeline.
-Currently tested mechanisms of authentication are AzurePowerShellCredential, Visual Studio authentication hasn't been shown to work.
+Currently tested mechanisms of authentication are AzurePowerShellCredential, VisualStudioCredential only works so far on older versions of Visual Studio components in VS 20022.
 
 The root of the url (wabi-north-europe-redirect) may need to be changed depending on your region
 
