@@ -11,7 +11,7 @@ Ths avoids timeouts as Azure.Identity alwasy tries Managed Identity First.
 2. If doing frequent connections you need to consider caching the AccessToken. By default is valid for an hour, but re-caling the 
 TokenRequest on each connection request can be a second or so of wasted time.
 
-3. We are tracking a buug in the Visual Studio DLLs whereby VisualStudioCredential does not work for generating tokens on the latest version, but you can switch to AzureCliCredential and this does work.
+3. We are tracking a bug in the Visual Studio DLLs whereby VisualStudioCredential does not work for generating tokens on the latest version, but you can switch to AzureCliCredential and this does work.
 We are triaging this and will work with Microsoft Support to confirm if this is a bug, or if VisualStudioCredenital has lost some support.
 
 <pre><code class='language-cs'>
