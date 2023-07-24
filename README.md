@@ -13,6 +13,7 @@ Ths avoids timeouts as Azure.Identity alwasy tries Managed Identity First.
 2. If doing frequent connections you need to consider caching the AccessToken. By default is valid for an hour, but re-caling the 
 TokenRequets on each connection request can be a second or so of wasted time.
 
+3. VisualStudioCredential currently is not working on most recent update of Visual Studio, AzureCliCredential and PowershellCredential are still working.
 
 <pre><code class='language-cs'>
 using System.Data.SqlClient;

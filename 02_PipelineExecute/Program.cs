@@ -4,11 +4,11 @@ using System.Net.Http.Headers;
 
 var DefaultAzureCredentialOptions = new DefaultAzureCredentialOptions
 {
-    ExcludeAzureCliCredential = true,
+    ExcludeAzureCliCredential = false,
     ExcludeManagedIdentityCredential = true,
     ExcludeSharedTokenCacheCredential = true,
     ExcludeVisualStudioCredential = false,
-    ExcludeAzurePowerShellCredential = true,
+    ExcludeAzurePowerShellCredential = false,
     ExcludeEnvironmentCredential = true,
     ExcludeVisualStudioCodeCredential = true,
     ExcludeInteractiveBrowserCredential = true
