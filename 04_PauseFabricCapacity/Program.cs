@@ -10,9 +10,9 @@ DefaultAzureCredentialOptions DefaultAzureCredentialOptions = new()
     ExcludeAzurePowerShellCredential = false
 };
 // Fill in specific information here:
-string SubscriptionId = "6fcdeaed-9120-4fb3-979b-fd3f522c5b9b";
-string ResourceGroupName = "prodata-fabric-1";
-string CapacityName = "prodataf2we";
+string SubscriptionId = "";
+string ResourceGroupName = "";
+string CapacityName = "";
 
 string CapacityUrl = $"https://management.azure.com/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Fabric/capacities/{CapacityName}";
 
