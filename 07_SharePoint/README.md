@@ -1,14 +1,11 @@
-## 01_SqlClientAAD
-Example of using Azure.Identity with SqlClient to authenticate to a Fabric SQL EndPoint.
-This can use various auth methods such as Managed Identity, Visual Studio and VS Code.
+## 01_SharePoint
+Example Fabric Notebook with SharePoint Integration an AAD Service Principle and Graph API.
+This allows Notebooks to seamlessly download file and folders from SharePoint.
 
 Some Warnings:
-1. You need to ensure that  ExcludeManagedIdentityCredential is set to True if you aer not using Managed Identity.
-Ths avoids timeouts as Azure.Identity alwasy tries Managed Identity First.
-
-2. If doing frequent connections you need to consider caching the AccessToken. By default is valid for an hour, but re-caling the 
-TokenRequest on each connection request can be a second or so of wasted time.
-
+1. You will need to create the service principle and assign SharePoint permissions to the service principle for the target site.
+This process is very well documented in the blog here
+https://sposcripts.com/download-files-from-sharepoint-using-graph/
 
 <pre><code class='language-cs'>
 using System.Data.SqlClient;
