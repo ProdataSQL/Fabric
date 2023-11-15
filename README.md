@@ -21,3 +21,6 @@ This is the same management api as used in a web browser. Will fail if capacity 
 ## [05_ResumeFabricCapacity](05_ResumeFabricCapicty/)
 Example of using Azure.Identity with HttpClient to authenticate to a Fabric Capcity and Resume it.
 This is the same management api as used in a web browser. Will fail if capacity is already running.
+
+## [06_RefreshPowerBIDataset](06_RefreshPowerBIDataset/)
+Example of using Python API to refresh PowerBI datasets within workspaces.
