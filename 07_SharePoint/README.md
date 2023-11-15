@@ -1,4 +1,4 @@
-## 01_SharePoint
+## 07_SharePoint
 Example Fabric Notebook with SharePoint Integration an AAD Service Principle and Graph API.
 This allows Notebooks to seamlessly download file and folders from SharePoint.
 
