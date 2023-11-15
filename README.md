@@ -24,3 +24,6 @@ This is the same management api as used in a web browser. Will fail if capacity 
 
 ## [06_RefreshPowerBIDataset](06_RefreshPowerBIDataset/)
 Example of using Python API to refresh PowerBI datasets within workspaces.
+
+## [07_SharePoint](07_SharePoint/)
+Sample Fabric Notebooks and builtin python class to Integrate Sharepoint and Fabric using Graph API.
