@@ -5,7 +5,7 @@ Monitoring TSQL Script for Fabric DW with similar output to https://whoisactive.
 If you haven't installed sp_WhoIsActive on all your SqlEbEngine, then its a must install. Adam's code is a master class in 
 design, TSQL coding and extensibility. A lesson in how to go from a basic script to a swiss army knife for instant performance and monitoring ;-)
 
-This script for Fabric DW just shows exec requests, sessions and SQL Statements. When coming from SqlDbEngine this adds some familiarity to monitoring.
+This Fabric DW script just shows exec requests, sessions and SQL Statements. When coming from SqlDbEngine this adds some familiarity to monitoring.
 
 Maybe in the future we will use KQL and Log Analytics, but hopefully we gte more DMVs to epand this type of solution.
 
