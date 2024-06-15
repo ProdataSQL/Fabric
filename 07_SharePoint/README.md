@@ -1,49 +1,48 @@
-## 01_SqlClientAAD
-Example of using Azure.Identity with SqlClient to authenticate to a Fabric SQL EndPoint.
-This can use various auth methods such as Managed Identity, Visual Studio and VS Code.
+## 07_SharePoint
+Example Fabric Notebook with SharePoint Integration an AAD Service Principle and Graph API.
+This allows Notebooks to seamlessly download file and folders from SharePoint.
 
-Some Warnings:
-1. You need to ensure that  ExcludeManagedIdentityCredential is set to True if you aer not using Managed Identity.
-Ths avoids timeouts as Azure.Identity alwasy tries Managed Identity First.
+What you will need 
+- ClientID and Secret for Service Principle (details below). Our sample assumes that the Secret is in Keyvault.
+- TenantID for AAD where the app regsistration has been added.
+- A Sharepoint Site, Library, optional Folder and some sample files
+- A Fabric Workspace with Notebooks
 
-2. If doing frequent connections you need to consider caching the AccessToken. By default is valid for an hour, but re-caling the 
-TokenRequest on each connection request can be a second or so of wasted time.
+**Pre-Requisite
+You will need to create the service principle and assign Sharepoint permissions to the service principle for the target site.
+This process is very well documented in the blog here
+https://sposcripts.com/download-files-from-sharepoint-using-graph/
 
+Sample Code below to download files, including wildard support
+<pre><code class='python'>
+ConnectionSettings = '{"library": "Unittest", "tenant_id":"xxxxxxxx-xxxx--xxxx-xxxxxxxxxxxx","app_client_id":"app-fabricdw-dev-clientid","app_client_secret":"app-fabricdw-dev-clientsecret","keyvault":"kv-fabric-dev","sharepoint_url":"prodata365.sharepoint.com","site":"Fabric"}'
+SourceSettings = '{}'
+SourceDirectory = 'tst'
+TargetDirectory = 'unittest/AW/tst'
+SourceObject = '*.xlsx'
+TargetFileName = ''
+TargetSettings = ''   
 
-<pre><code class='language-cs'>
-using System.Data.SqlClient;
-using Azure.Identity;
-using Azure.Core;
-using System.Data;
+from builtin.sharepoint import Sharepoint,AuthToken
+import pandas
+import json
+from os.path import join
+from pathlib import Path
 
-var  DefaultAzureCredentialOptions  =  new DefaultAzureCredentialOptions 
-    {
-        ExcludeAzureCliCredential = true,
-        ExcludeManagedIdentityCredential = true,
-        ExcludeSharedTokenCacheCredential = true,
-        ExcludeVisualStudioCredential = false,
-        ExcludeAzurePowerShellCredential = true,
-        ExcludeEnvironmentCredential = true,
-        ExcludeVisualStudioCodeCredential = true,
-        ExcludeInteractiveBrowserCredential = true
-    };
+SourceSettings = SourceSettings or '{}'
+ConnectionSettings = ConnectionSettings or '{}'
+source_connection_options = json.loads(ConnectionSettings)
+source_options = json.loads(SourceSettings)
 
-    var accessToken = new DefaultAzureCredential(DefaultAzureCredentialOptions).GetToken(new TokenRequestContext(new string[] { "https://database.windows.net//.default" }));
-    var sqlServer = "fkm4vwf6l6zebg4lqrhbtdcmsq-absyvg6llsuutcc3wwyid37nou.datawarehouse.pbidedicated.windows.net";
-    var sqlDatabase = "";
-    var connectionString = $"Server={sqlServer};Database={sqlDatabase}";
+auth_token = AuthToken(**source_connection_options)
+sharepoint = Sharepoint(auth_token, folder=SourceDirectory, file=SourceObject, **source_options, **source_connection_options)
 
-    //Set AAD Access Token, Open Conneciton, Run Queries and Disconnect
-    using var con = new SqlConnection(connectionString);
-    con.AccessToken = accessToken.Token;
-    con.Open();
-    using var cmd = new SqlCommand();
-    cmd.Connection = con;
-    cmd.CommandType = CommandType.Text;
-    cmd.CommandText = "SELECT @@Version";
-    var res =cmd.ExecuteScalar();
-    con.Close();
+files = sharepoint.get_file_bytes()
 
-  Console.WriteLine(res);
+for file_name, file_bytes in files.items():
+    Path(join("/lakehouse/default/Files/",TargetDirectory)).mkdir(parents=True, exist_ok=True)
+
+    with open(join("/lakehouse/default/Files/",TargetDirectory,file_name), "wb") as f:
+        f.write(file_bytes.getbuffer())
 </code></pre>
   
