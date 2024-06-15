@@ -27,3 +27,6 @@ Example of using Python API to refresh PowerBI datasets within workspaces.
 
 ## [07_SharePoint](07_SharePoint/)
 Sample Fabric Notebooks and builtin python class to Integrate Sharepoint and Fabric using Graph API.
+
+## [09_sp_WhoIsActive](09_sp_WhoIsActive/)
+Monitoring script for Fabric DW to show requests, sessions and blocking
