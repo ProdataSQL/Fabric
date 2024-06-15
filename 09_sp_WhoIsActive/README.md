@@ -1,4 +1,4 @@
-## 09_sp_WhoIsActive
+## 09 FabricDW sp_WhoIsActive
 Monitoring TSQL Script for Fabric DW with similar output to https://whoisactive.com/ which is created and maintained by fellow MCM 
 <a href="https://github.com/amachanic">Adam Machanic</a>, - probably the most widely used and known 3rd Party scripot for SqlDbEngine
 
