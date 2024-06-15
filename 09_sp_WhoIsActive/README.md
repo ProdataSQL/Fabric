@@ -39,6 +39,6 @@ Limitations:
 
 
 
-Sample call below showing a logn running query causing blocking
+Sample call below showing a long running query causing blocking
   ![image](https://github.com/ProdataSQL/Fabric/assets/19823837/fda392ae-1766-4617-95da-4ba71ecf292c)
 
