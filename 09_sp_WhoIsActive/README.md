@@ -1,9 +1,11 @@
 ## 09_sp_WhoIsActive
-Monitoring TSQL Script for Fabric DW with similar output to the world famous toolset by my fellow MCM Adam Machanic
-(And author of probably the most famous 3rd party TSQL Script)
-https://whoisactive.com/
+Monitoring TSQL Script for Fabric DW with similar output to https://whoisactive.com/ which is created and maintained by fellow MCM 
+Adam Machanic, - probably the most widely used and known 3rd Party scripot for SqlDbEngine
 
-So far it just shows exec requests, sessions and SQL Statements. When coming from SqlDbEngine this adds some familiarity to monitoring.
+If you haven't intsalled https://whoisactive.com/ on all your SqlEbEngine, then its a must install. This code is a master class in 
+design, TSQL coding and extensibility.
+
+This script for Fabric DW just shows exec requests, sessions and SQL Statements. When coming from SqlDbEngine this adds some familiarity to monitoring.
 
 Maybe in the future we will use KQL and Log Analytics, but hopefully we gte more DMVs to epand this type of solution.
 
