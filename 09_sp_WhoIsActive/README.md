@@ -18,6 +18,10 @@ Limitations:
 - We dont yet have query plans in Fabric DW
 - Wait stats are pretty generic
 - We dont get CPU in DMVs
+- No XML or ring buffer support in Fabric
+- TRhe following DMVS we use on SqlDBEngine are not supported on Fabric
+ - sys.dm_os_sys_info
+  - 
 
 
 Sample call below
