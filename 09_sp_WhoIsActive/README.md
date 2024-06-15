@@ -1,5 +1,5 @@
 ## 09_sp_WhoIsActive
-Monitoring TSQL Script for Fabric DW with similar output to the world famous sp_WhoIsActive by Adam Machanic
+Monitoring TSQL Script for Fabric DW with similar output to the world famous toolset by Adam Machanic
 https://whoisactive.com/
 
 So far it just shows exec requests, sessions and SQL Statements. When coming from SqlDbEngine this adds some familiarity to monitoring.
