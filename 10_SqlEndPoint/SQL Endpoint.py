@@ -1,13 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# ## SQL Endpoint
-# 
-# New notebook
-
-# In[33]:
-
-
 dw_name="FabricDW"   # Change this to your DW Name
 
 import sempy.fabric as fabric
