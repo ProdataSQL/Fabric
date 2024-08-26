@@ -30,3 +30,6 @@ Sample Fabric Notebooks and builtin python class to Integrate Sharepoint and Fab
 
 ## [09_sp_WhoIsActive](09_sp_WhoIsActive/)
 Monitoring script for Fabric DW to show requests, sessions and blocking. This has moved to https://github.com/ProdataSQL/FabricWhoIsActive
+
+## [10_SqlEndPoint](10_SqlEndPointe/)
+Sample Notebook to connect to a Fabric SqlEndPoint using AAD Token from a Notebook with Python
