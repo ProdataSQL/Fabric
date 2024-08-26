@@ -29,4 +29,4 @@ Example of using Python API to refresh PowerBI datasets within workspaces.
 Sample Fabric Notebooks and builtin python class to Integrate Sharepoint and Fabric using Graph API.
 
 ## [09_sp_WhoIsActive](09_sp_WhoIsActive/)
-Monitoring script for Fabric DW to show requests, sessions and blocking
+Monitoring script for Fabric DW to show requests, sessions and blocking. This has moved to https://github.com/ProdataSQL/FabricWhoIsActive
