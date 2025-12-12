@@ -33,3 +33,7 @@ Monitoring script for Fabric DW to show requests, sessions and blocking. This ha
 
 ## [10_SqlEndPoint](10_SqlEndPoint/SQL%20Endpoint.py)
 Sample Notebook to connect to a Fabric SqlEndPoint using AAD Token from a Notebook with Python
+
+## [11_RestartMirror](11_RestartMirror/)
+Sample Fabric Notebooks to Restart a SQL Database Mirror 
+
